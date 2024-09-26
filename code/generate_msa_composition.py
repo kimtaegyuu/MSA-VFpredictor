@@ -1,7 +1,5 @@
 import esm
 import torch
-#import itertools
-#import os
 import string
 from Bio import SeqIO
 import numpy as np
