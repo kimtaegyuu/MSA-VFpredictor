@@ -24,3 +24,14 @@ To generate MSA-composition from MSA data, run "generate_msa_composition.py"
 ```
 python generate_msa_composition.py --msa [INPUT (.a3m)] --msa_composition [OUTPUT (.npy)]
 ```
+
+## Seqsim
+Step 1. Make blast database
+```
+makeblastdb -in [INPUT] -title [DB_TITLE] -dbtype prot -out [DB_NAME]
+```
+Step 2. BLASTP query sequence search for DB
+```
+blastp -query [INPUT] -db [BLAST_DB] -evalue 10 -out [OUTPUT] -matrix [BLOSUM62]
+```
+Step 3. Highest bitscores against the positive and negative training dataset (blast database) is seqsim feature
