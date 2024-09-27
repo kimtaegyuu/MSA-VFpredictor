@@ -21,6 +21,14 @@ if __name__ == '__main__':
 
     msa_composition = np.load(arg.msa_composition)
     seqsim = np.load(arg.msa_composition)
+
+    msa_composition = torch.from_numpy(msa_composition)
+    msa_composition = msa_composition.type('torch.FloatTensor')
+    msa_composition = msa_composition.to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
+
+    seqsim = torch.from_numpy(seqsim)
+    seqsim = seqsim.type('torch.FloatTensor')
+    seqsim = seqsim.to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
     
     result=MVP_model(msa_composition,seqsim)
     
