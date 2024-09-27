@@ -22,7 +22,7 @@ hhblits -i [INPUT] -o [OUTPUT] -oa3m [RESULT_MSA] -d [DB_BASENAME]
 ### MSA-composition generation
 To generate MSA-composition from MSA data, run "generate_msa_composition.py"
 ```
-python generate_msa_composition.py --msa [INPUT (.a3m)] --msa_composition [OUTPUT (.npy)]
+python3 generate_msa_composition.py --msa [INPUT (.a3m)] --msa_composition [OUTPUT (.npy)]
 ```
 
 ## Seqsim
@@ -41,3 +41,12 @@ Step 3. Highest bitscores against the positive and negative training dataset (bl
 bash generate_seqsim.sh [INPUT (example1.fasta)]
 ```
 ---> As a result, you will obtain "study1_seqsim.npy".
+
+## VF predict
+Step 1. Download our trained model, 'MVP_model.pt' in https://drive.google.com/file/d/1f32zC6LMMR0w2C9KamvoqP6xYEblnzNj/view?usp=sharing 
+
+Step2. Use MVP.py in 'codoe' folder
+```
+python3 MVP.py --msa_composition [INPUT (.npy)] --seqsim [INPUT (.npy)]
+```
+
