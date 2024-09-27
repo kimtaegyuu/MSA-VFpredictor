@@ -26,7 +26,7 @@ python generate_msa_composition.py --msa [INPUT (.a3m)] --msa_composition [OUTPU
 ```
 
 ## Seqsim
-Step 1. Make blast database
+Step 1. Make blast database (blast target database for train_positive and train_negative are in "code/blast_db")
 ```
 makeblastdb -in [INPUT] -title [DB_TITLE] -dbtype prot -out [DB_NAME]
 ```
@@ -35,3 +35,9 @@ Step 2. BLASTP query sequence search for DB
 blastp -query [INPUT] -db [BLAST_DB] -evalue 10 -out [OUTPUT] -matrix [BLOSUM62]
 ```
 Step 3. Highest bitscores against the positive and negative training dataset (blast database) is seqsim feature
+
+#### You can easily obtain the seqsim feature by running the "generate_seqsim.sh" script located in the "code" folder.
+```
+bash generate_seqsim.sh [INPUT (example1.fasta)]
+```
+---> As a result, you will obtain "study1_seqsim.npy".
