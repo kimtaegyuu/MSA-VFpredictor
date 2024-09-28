@@ -45,8 +45,9 @@ bash generate_seqsim.sh [INPUT (example1.fasta)]
 ## VF predict
 Step 1. Download our trained model, 'MVP_model.pt' in https://drive.google.com/file/d/1f32zC6LMMR0w2C9KamvoqP6xYEblnzNj/view?usp=sharing 
 
-Step2. Use MVP.py in 'codoe' folder
+Step2. Use MVP.py in 'code' folder
 ```
 python3 MVP.py --msa_composition [INPUT (.npy)] --seqsim [INPUT (.npy)]
 ```
+---> As a result, 'VF' or 'non-VF' will obatain for predict result.
 
