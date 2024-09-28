@@ -81,7 +81,7 @@ if __name__ == '__main__':
     data = msa_embedding_data.cpu().numpy()[0]
     label_p = msa_token_data.cpu().numpy()[0][0]
     for i in range(1024):
-        msa_composition_data[label_p[i]] += data_p[i]
+        msa_composition_data[label_p[i]] += data[i]
     pad_num=0
     for i in range(3):
         pad_num += list(label_p).count(i)
